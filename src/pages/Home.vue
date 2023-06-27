@@ -1,24 +1,39 @@
 <template>
-  <div>
-    <h1>Home</h1>
-    <table class="auto">
-      <thead>
-        <tr class="">
-          <th>ID</th>
-          <th>Title</th>
-          <th>Summary</th>
-          <th>URL</th>
-        </tr>
-      </thead>
-      <tbody class="">
-        <tr class="" v-for="article in articles" :key="article.id">
-          <td>{{ article.id }}</td>
-          <td>{{ article.title }}</td>
-          <td>{{ article.summary }}</td>
-          <td><a :href="article.readmore">Read more</a></td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="flex justify-center items-center">
+    <div class="text-center">
+      <h1 class="text-2xl font-bold mb-4">Blog Articles</h1>
+      <div class="overflow-x-auto">
+        <table class="table-auto mx-auto">
+          <thead>
+            <tr class="bg-amber-400">
+              <th class="px-4 py-2">ID</th>
+              <th class="px-4 py-2">Title</th>
+              <th class="px-4 py-2">Summary</th>
+              <th class="px-4 py-2">URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="article in articles"
+              :key="article.id"
+              class="bg-amber-100"
+            >
+              <td class="px-4 py-2">{{ article.id }}</td>
+              <td class="px-4 py-2">{{ article.title }}</td>
+              <td class="px-4 py-2 break-words max-w-xl">
+                {{ article.summary }}
+              </td>
+              <td class="px-4 py-2">
+                <a :href="article.readmore">Read more</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="pt-10">
+        Blog assessment for Contractuo. Ioannis Kantiloros 2023.
+      </p>
+    </div>
   </div>
 </template>
 
