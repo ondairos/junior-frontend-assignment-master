@@ -3,28 +3,25 @@
     <div class="text-center">
       <h1 class="text-2xl font-bold mb-4">Blog Articles</h1>
       <div class="overflow-x-auto">
-        <table class="table-auto mx-auto">
+        <table class="table-auto mx-auto border-separate">
           <thead>
             <tr class="bg-amber-400">
               <th class="px-4 py-2">ID</th>
               <th class="px-4 py-2">Title</th>
               <th class="px-4 py-2">Summary</th>
-              <th class="px-4 py-2">URL</th>
             </tr>
           </thead>
           <tbody>
             <tr
               v-for="article in articles"
               :key="article.id"
-              class="bg-amber-100"
+              class="bg-amber-100 cursor-pointer"
+              @click="goToHomePage"
             >
               <td class="px-4 py-2">{{ article.id }}</td>
               <td class="px-4 py-2">{{ article.title }}</td>
               <td class="px-4 py-2 break-words max-w-xl">
                 {{ article.summary }}
-              </td>
-              <td class="px-4 py-2">
-                <a :href="article.readmore">Read more</a>
               </td>
             </tr>
           </tbody>
@@ -114,6 +111,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    goToHomePage() {
+      console.log("testing link");
+    },
   },
 };
 </script>
