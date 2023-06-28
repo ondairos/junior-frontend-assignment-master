@@ -16,7 +16,7 @@
               v-for="article in articles"
               :key="article.id"
               class="cursor-pointer bg-slate-100"
-              @click="goToShowPage"
+              @click="goToShowPage(article.id)"
             >
               <td class="border border-slate-400 px-4 py-2">
                 {{ article.id }}
@@ -45,6 +45,7 @@
 <script>
 // imports for helpers in Vuex lib
 import { mapState, mapActions } from "vuex";
+import { RouterLink } from "vue-router";
 
 export default {
   computed: {
@@ -56,11 +57,12 @@ export default {
     this.getArticles();
   },
   methods: {
-    goToShowPage() {
-      console.log("testing link");
+    goToShowPage(articleId) {
+      this.$router.push(`/article/${articleId}`);
     },
     // helper function that allows to directly call getArticles from within the component
     ...mapActions(["getArticles"]),
   },
+  components: { RouterLink },
 };
 </script>

@@ -1,13 +1,15 @@
 <template>
-  <h1>This is the Show page</h1>
+  <div class="flex justify-center items-center text-center">
+    <h1>This is the Show page</h1>
+  </div>
 </template>
 
 <script>
 export default {
-  data() {},
+  // data() {},
   methods: {
     goToHomePage() {
-      console.log("testing link");
+      console.log("testing home link");
     },
   },
 };
