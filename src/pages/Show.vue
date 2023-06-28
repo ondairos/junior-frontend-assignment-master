@@ -2,7 +2,7 @@
   <div class="flex flex-col justify-center items-center text-center">
     <div
       v-if="article"
-      class="flex flex-col items-center justify-center text-center"
+      class="flex flex-col items-center justify-center text-center h-screen"
     >
       <img :src="article.image_url" alt="" class="h-1/2 w-1/2" />
       <div class="pt-10 w-1/2 bg-slate-300 shadow-lg">
@@ -29,6 +29,12 @@
     <div v-else>
       <p>Loading...</p>
     </div>
+    <div v-if="article" class="">
+      <p class="w-full flex items-center justify-center">
+        Blog assessment for Contractuo. Ioannis Kantiloros 2023.
+      </p>
+    </div>
+    <div v-else></div>
   </div>
 </template>
 

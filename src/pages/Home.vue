@@ -35,10 +35,8 @@
           </tbody>
         </table>
       </div>
-      <div v-if="articles.length > 0" class="bg-gray-300">
-        <p
-          class="h-14 shadow-xl border-b-2 w-full flex items-center justify-center"
-        >
+      <div v-if="articles.length > 0" class="">
+        <p class="h-14 w-full flex items-center justify-center">
           Blog assessment for Contractuo. Ioannis Kantiloros 2023.
         </p>
       </div>
