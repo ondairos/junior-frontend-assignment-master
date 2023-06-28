@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center items-center">
     <div class="text-center">
-      <h1 class="text-2xl font-bold mb-4">Blog Articles</h1>
+      <h1 class="text-2xl font-bold mb-4">Space Blog Articles</h1>
       <div class="overflow-x-auto">
         <table class="table-auto mx-auto bg-white">
           <thead>
@@ -43,16 +43,20 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
+
 export default {
   computed: {
-    articles() {
-      return this.$store.getters.articles;
-    },
+    ...mapState(["articles"]),
+  },
+  mounted() {
+    this.getArticles();
   },
   methods: {
     goToShowPage() {
       console.log("testing link");
     },
+    ...mapActions(["getArticles"]),
   },
 };
 </script>
