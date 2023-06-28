@@ -43,12 +43,15 @@
 </template>
 
 <script>
+// imports for helpers in Vuex lib
 import { mapState, mapActions } from "vuex";
 
 export default {
   computed: {
+    // maps the articles state from vuex store to the component
     ...mapState(["articles"]),
   },
+  // get's executed when the component is mounted in the DOM. Fetches the articles
   mounted() {
     this.getArticles();
   },
@@ -56,6 +59,7 @@ export default {
     goToShowPage() {
       console.log("testing link");
     },
+    // helper function that allows to directly call getArticles from within the component
     ...mapActions(["getArticles"]),
   },
 };
