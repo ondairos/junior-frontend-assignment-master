@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <h1>This is the Show page</h1>
+</template>
 
 <script>
 export default {

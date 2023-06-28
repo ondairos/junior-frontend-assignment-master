@@ -51,7 +51,7 @@ export default {
     // maps the articles state from vuex store to the component
     ...mapState(["articles"]),
   },
-  // get's executed when the component is mounted in the DOM. Fetches the articles
+  //like useEffect() React get's executed when the component is mounted in the DOM. Fetches the articles
   mounted() {
     this.getArticles();
   },
