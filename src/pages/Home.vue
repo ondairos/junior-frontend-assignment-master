@@ -16,7 +16,7 @@
               v-for="article in articles"
               :key="article.id"
               class="cursor-pointer bg-slate-100"
-              @click="goToHomePage"
+              @click="goToShowPage"
             >
               <td class="border border-slate-400 px-4 py-2">
                 {{ article.id }}
@@ -44,86 +44,13 @@
 
 <script>
 export default {
-  data() {
-    return {
-      articles: [
-        {
-          id: 11414,
-          title: "Space X Now",
-          summary:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quam sed, illo reiciendis asperiores quasi voluptatibus sunt! Odit, vitae dolorum. Laudantium ipsam, cupiditate voluptate eum vitae recusandae reprehenderit id pariatur?",
-          readmore: "https://example.com/article1",
-        },
-        {
-          id: 112414,
-          title:
-            "NASA to Provide Coverage as Dragon Departs Station with Science",
-          summary:
-            "NASA is set to receive scientific research samples and hardware as a SpaceX Dragon cargo resupply spacecraft departs the International Space Station on Thursday, June 29.",
-          readmore: "https://example.com/article1",
-        },
-        {
-          id: 11114,
-          title:
-            "NASA Invites Media to Cover Asteroid Sample Return, Logistics Call",
-          summary:
-            "NASA’s OSIRIS-REx (Origins, Spectral Interpretation, Resource Identification and Security – Regolith Explorer) mission will deliver the agency’s first asteroid sample collected in space to Earth on Sept. 24, 2023. Media interested in covering the landing, as well as mission activities leading up to and following the return, are invited to register",
-          readmore: "https://example.com/article1",
-        },
-        {
-          id: 11414,
-          title: "Space X Now",
-          summary:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quam sed, illo reiciendis asperiores quasi voluptatibus sunt! Odit, vitae dolorum. Laudantium ipsam, cupiditate voluptate eum vitae recusandae reprehenderit id pariatur?",
-          readmore: "https://example.com/article1",
-        },
-        {
-          id: 11414,
-          title: "Space X Now",
-          summary:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quam sed, illo reiciendis asperiores quasi voluptatibus sunt! Odit, vitae dolorum. Laudantium ipsam, cupiditate voluptate eum vitae recusandae reprehenderit id pariatur?",
-          readmore: "https://example.com/article1",
-        },
-        {
-          id: 11414,
-          title: "Space X Now",
-          summary:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quam sed, illo reiciendis asperiores quasi voluptatibus sunt! Odit, vitae dolorum. Laudantium ipsam, cupiditate voluptate eum vitae recusandae reprehenderit id pariatur?",
-          readmore: "https://example.com/article1",
-        },
-        {
-          id: 11414,
-          title: "Space X Now",
-          summary:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quam sed, illo reiciendis asperiores quasi voluptatibus sunt! Odit, vitae dolorum. Laudantium ipsam, cupiditate voluptate eum vitae recusandae reprehenderit id pariatur?",
-          readmore: "https://example.com/article1",
-        },
-        {
-          id: 11414,
-          title: "Space X Now",
-          summary:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quam sed, illo reiciendis asperiores quasi voluptatibus sunt! Odit, vitae dolorum. Laudantium ipsam, cupiditate voluptate eum vitae recusandae reprehenderit id pariatur?",
-          readmore: "https://example.com/article1",
-        },
-        {
-          id: 11414,
-          title: "Space X Now",
-          summary:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quam sed, illo reiciendis asperiores quasi voluptatibus sunt! Odit, vitae dolorum. Laudantium ipsam, cupiditate voluptate eum vitae recusandae reprehenderit id pariatur?",
-          readmore: "https://example.com/article1",
-        },
-        {
-          id: 11414,
-          title: "Space X Now",
-          summary:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quam sed, illo reiciendis asperiores quasi voluptatibus sunt! Odit, vitae dolorum. Laudantium ipsam, cupiditate voluptate eum vitae recusandae reprehenderit id pariatur?",
-          readmore: "https://example.com/article1",
-        },
-      ],
-    };
+  computed: {
+    articles() {
+      return this.$store.getters.articles;
+    },
   },
   methods: {
-    goToHomePage() {
+    goToShowPage() {
       console.log("testing link");
     },
   },
