@@ -16,7 +16,7 @@
               v-for="article in articles"
               :key="article.id"
               class="cursor-pointer bg-slate-100"
-              @click="goToShowPage(article.id)"
+              @click="goToShowPage(article)"
             >
               <td class="border border-slate-400 px-4 py-2">
                 {{ article.id }}
@@ -60,8 +60,12 @@ export default {
     this.getArticles();
   },
   methods: {
-    goToShowPage(articleId) {
-      this.$router.push(`/article/${articleId}`);
+    goToShowPage(article) {
+      // this.$router.push(`/article/${articleId}`);
+      this.$router.push({
+        path: `/article/${article.id}`,
+        query: { article: JSON.stringify(article) },
+      });
     },
     // helper function that allows to directly call getArticles from within the component
     ...mapActions(["getArticles"]),

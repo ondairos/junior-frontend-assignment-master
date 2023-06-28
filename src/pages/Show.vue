@@ -47,18 +47,35 @@ export default {
     };
   },
   created() {
-    this.getArticle();
+    // this.getArticle();
+    const articleId = this.$route.params.id;
+    // console.log(`id in created : ${articleId}`);
+    if (articleId) {
+      this.getArticle(articleId);
+    }
+    const articleData = this.$route.query.article;
+    if (articleData) {
+      this.article = JSON.parse(articleData);
+    } else {
+      this.getArticle();
+    }
   },
   methods: {
     goToHomePage() {
       this.$router.push(`/`);
     },
+    // in vue2 use regular functions to bind this. avoid arrows
     async getArticle() {
       const articleId = this.$route.params.id;
-      const response = await axios.get(
-        `https://api.spaceflightnewsapi.net/v4/articles/${articleId}`
-      );
-      this.article = response.data;
+      // console.log(articleId);
+      if (articleId) {
+        const response = await axios.get(
+          `https://api.spaceflightnewsapi.net/v4/articles/${articleId}`
+        );
+        this.article = response.data;
+      } else {
+        this.goToHomePage();
+      }
     },
   },
 };
