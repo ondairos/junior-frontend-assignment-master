@@ -40,22 +40,21 @@
 
 <script>
 import axios from "axios";
+import { mapGetters } from "vuex";
+
 export default {
   data() {
-    return {
-      article: null,
-    };
+    return {};
+  },
+  computed: {
+    ...mapGetters(["article"]),
   },
   created() {
     // this.getArticle();
     const articleId = this.$route.params.id;
     // console.log(`id in created : ${articleId}`);
     if (articleId) {
-      this.getArticle(articleId);
-    }
-    const articleData = this.$route.query.article;
-    if (articleData) {
-      this.article = JSON.parse(articleData);
+      this.$store.dispatch("getArticle", articleId);
     } else {
       this.getArticle();
     }

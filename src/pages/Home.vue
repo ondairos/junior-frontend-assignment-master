@@ -65,10 +65,8 @@ export default {
   methods: {
     goToShowPage(article) {
       // this.$router.push(`/article/${articleId}`);
-      this.$router.push({
-        path: `/article/${article.id}`,
-        query: { article: JSON.stringify(article) },
-      });
+      this.$store.dispatch("getArticle", article.id);
+      this.$router.push(`/article/${article.id}`);
     },
     // helper function that allows to directly call getArticles from within the component
     ...mapActions(["getArticles"]),
