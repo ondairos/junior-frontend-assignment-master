@@ -2,7 +2,7 @@
   <div class="flex justify-center items-center">
     <div class="text-center">
       <h1 class="text-2xl font-bold mb-4">Space Blog Articles</h1>
-      <div class="overflow-x-auto">
+      <div v-if="articles.length > 0" class="overflow-x-auto">
         <table class="table-auto mx-auto bg-white">
           <thead>
             <tr class="bg-blue-100 shadow-lg border border-slate-400">
@@ -34,6 +34,9 @@
             </tr>
           </tbody>
         </table>
+      </div>
+      <div v-else>
+        <h1>Loading...</h1>
       </div>
       <div v-if="articles.length > 0" class="">
         <p class="h-14 w-full flex items-center justify-center">

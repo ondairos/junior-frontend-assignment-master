@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {},
     fontFamily: {
-      sans: ['Roboto', 'Arial', 'sans-serif']
+      sans: ['Niramit', 'Roboto', 'sans-serif']
     }
   },
   plugins: [],

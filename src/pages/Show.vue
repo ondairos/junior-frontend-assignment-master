@@ -13,7 +13,7 @@
           target="_blank"
           >Open Article</a
         >
-        <p class="mt-5">
+        <p class="mt-5 px-14">
           <a :href="article.url" target="_blank" class="">{{
             article.summary
           }}</a>
